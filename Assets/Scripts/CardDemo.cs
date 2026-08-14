@@ -1,4 +1,4 @@
-using PokerGame.Core;
+using DealerGame.core;
 using UnityEngine;
 
 public class CardDemo : MonoBehaviour
