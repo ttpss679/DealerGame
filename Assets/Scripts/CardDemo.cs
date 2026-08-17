@@ -8,6 +8,9 @@ public class CardDemo : MonoBehaviour
     public PlayingCard testCard = new PlayingCard(Suit.Spades, Rank.King);
     public CardView cardView;
 
+
+    private Deck _deck = new Deck();
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     // 按下play後執行一次，初始化
     void Start()
@@ -15,7 +18,7 @@ public class CardDemo : MonoBehaviour
         Debug.Log(testCard);
         //視覺顯示.綁定(卡牌資料)
         cardView.Bind(testCard);
-
+        testCard = _deck.Draw();
     }
 
     // Update is called once per frame

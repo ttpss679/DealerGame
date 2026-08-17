@@ -47,11 +47,28 @@ namespace DealerGame.View
             return suit.ToString();
         }
 
+
+        private Color GetSuitColor(Suit suit)
+        {
+            switch (suit)
+            {
+                case Suit.Hearts: return Color.red;
+                case Suit.Diamonds: return Color.red;
+                case Suit.Clubs: return Color.black;
+                case Suit.Spades: return Color.black;
+                    
+            }
+            return Color.white;
+        }
+
+               
+        }
+
         #endregion 私有方法
 
 
 
 
 
-    }
 }
+
