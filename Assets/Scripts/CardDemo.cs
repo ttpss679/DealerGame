@@ -1,17 +1,20 @@
 using DealerGame.core;
+using DealerGame.View;
 using UnityEngine;
 
 public class CardDemo : MonoBehaviour
 {
     //宣告類型 名稱
-    public PlayingCard testCard = new PlayingCard();
+    public PlayingCard testCard = new PlayingCard(Suit.Spades, Rank.King);
+    public CardView cardView;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     // 按下play後執行一次，初始化
     void Start()
     {
         Debug.Log(testCard);
-
+        //視覺顯示.綁定(卡牌資料)
+        cardView.Bind(testCard);
 
     }
 
