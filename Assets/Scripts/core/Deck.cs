@@ -35,7 +35,7 @@ namespace DealerGame.core
         /// <returns>一張牌</returns>
         public PlayingCard Draw()
         {
-            return _cards[18];
+            return _cards[0];
                
         }
 

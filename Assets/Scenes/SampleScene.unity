@@ -293,9 +293,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe4183253e11ada4abf989c973fae54e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardDemo
-  testCard:
-    Suit: 3
-    Rank: 13
   cardView: {fileID: 0}
 --- !u!114 &813460001 stripped
 MonoBehaviour:
@@ -397,7 +394,7 @@ SpriteRenderer:
   m_Size: {x: 1.2, y: 1.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
 --- !u!1001 &1374726906
@@ -449,8 +446,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1000164330006304814, guid: 0a86bad64c5c4434ab4e807a7a159d0f, type: 3}
+      propertyPath: m_text
+      value: "\u2665"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000164330006304814, guid: 0a86bad64c5c4434ab4e807a7a159d0f, type: 3}
       propertyPath: m_fontSize
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1000164330006304814, guid: 0a86bad64c5c4434ab4e807a7a159d0f, type: 3}
       propertyPath: m_fontColor.b
@@ -466,15 +467,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1000164330006304814, guid: 0a86bad64c5c4434ab4e807a7a159d0f, type: 3}
       propertyPath: m_fontSizeBase
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1000164330006304814, guid: 0a86bad64c5c4434ab4e807a7a159d0f, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190080
       objectReference: {fileID: 0}
+    - target: {fileID: 4987345627497618423, guid: 0a86bad64c5c4434ab4e807a7a159d0f, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987345627497618423, guid: 0a86bad64c5c4434ab4e807a7a159d0f, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987345627497618423, guid: 0a86bad64c5c4434ab4e807a7a159d0f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9b3f8cd91edcf2b4484d2b9ad8f1d4fd, type: 3}
+    - target: {fileID: 4987345627497618423, guid: 0a86bad64c5c4434ab4e807a7a159d0f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5477898836783548587, guid: 0a86bad64c5c4434ab4e807a7a159d0f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.8
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6585451018456937587, guid: 0a86bad64c5c4434ab4e807a7a159d0f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -482,7 +499,7 @@ PrefabInstance:
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 7447744649553369889, guid: 0a86bad64c5c4434ab4e807a7a159d0f, type: 3}
       propertyPath: m_fontSize
-      value: 15
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7447744649553369889, guid: 0a86bad64c5c4434ab4e807a7a159d0f, type: 3}
       propertyPath: m_fontColor.b
@@ -498,7 +515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7447744649553369889, guid: 0a86bad64c5c4434ab4e807a7a159d0f, type: 3}
       propertyPath: m_fontSizeBase
-      value: 15
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7447744649553369889, guid: 0a86bad64c5c4434ab4e807a7a159d0f, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -518,7 +535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9126066740481891766, guid: 0a86bad64c5c4434ab4e807a7a159d0f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.8
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -528,7 +545,7 @@ PrefabInstance:
       addedObject: {fileID: 968399046}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8530188392830515693, guid: 0a86bad64c5c4434ab4e807a7a159d0f, type: 3}
-      insertIndex: -1
+      insertIndex: 1
       addedObject: {fileID: 84344006}
     - targetCorrespondingSourceObject: {fileID: 8900255975228466189, guid: 0a86bad64c5c4434ab4e807a7a159d0f, type: 3}
       insertIndex: -1
@@ -566,9 +583,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe4183253e11ada4abf989c973fae54e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardDemo
-  testCard:
-    Suit: 3
-    Rank: 13
   cardView: {fileID: 84344006}
 --- !u!4 &1477044252
 Transform:

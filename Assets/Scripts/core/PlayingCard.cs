@@ -11,11 +11,11 @@ namespace DealerGame.core
         /// <summary>
         /// [唯讀]取得花色
         /// </summary>
-        public Suit Suit;//{ get; }
+        public Suit Suit{ get; }
         /// <summary>
         /// [唯讀]取得點數
         /// </summary>
-        public Rank Rank;//{ get; }
+        public Rank Rank{ get; }
         #endregion 公開屬性
 
         #region 建構式
@@ -26,7 +26,7 @@ namespace DealerGame.core
         /// <param name="rank">點數</param>
         public PlayingCard(Suit suit, Rank rank)
         {
-            Suit = suit;//紀錄在上方的欄位中
+            Suit = suit;//作用是紀錄在上方的欄位中
             Rank = rank;
         }
         #endregion 建構式

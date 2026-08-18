@@ -15,7 +15,7 @@ public class CardDemo : MonoBehaviour
     // 按下play後執行一次，初始化
     void Start()
     {
-        Debug.Log(testCard);
+        Debug.Log(testCard.Info());
         //視覺顯示.綁定(卡牌資料)
         cardView.Bind(testCard);
         testCard = _deck.Draw();
@@ -25,6 +25,7 @@ public class CardDemo : MonoBehaviour
     // 遊戲的每一FPS每秒幀數 全名Frames Per Second，偵測操作/刷新內容
     void Update()
     {
-        
+        //視覺顯示.綁定(卡牌資料)
+        cardView.Bind(testCard);
     }
 }
