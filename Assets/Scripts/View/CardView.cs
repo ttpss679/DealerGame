@@ -3,6 +3,9 @@ using TMPro;
 using UnityEngine;
 namespace DealerGame.View
 {
+    /// <summary>
+    /// 用來建立卡牌視覺物件單元
+    /// </summary>
     public class CardView : MonoBehaviour
     {
         #region UI元件
@@ -39,7 +42,7 @@ namespace DealerGame.View
             //邏輯判斷式
             switch (rank)
             {
-                case Rank.Ace: return  "A";
+                case Rank.Ace: return "A";
                 case Rank.Jack: return "J";
                 case Rank.Queen: return "Q";
                 case Rank.King: return "K";
@@ -78,19 +81,10 @@ namespace DealerGame.View
                 case Suit.Spades: return Color.black;
                 //預設白色
                 default: return Color.white;
-
             }
-            
         }
-
-               
-        }
+     }
 
         #endregion 私有方法
-
-
-
-
-
 }
 

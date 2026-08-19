@@ -47,7 +47,7 @@ namespace DealerGame.core
 
         #region 公開方法
         /// <summary>
-        /// 重設
+        /// 重設牌庫使用狀態
         /// </summary>
         public void Reset()
         {

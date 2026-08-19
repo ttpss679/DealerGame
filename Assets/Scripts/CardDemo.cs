@@ -8,7 +8,9 @@ public class CardDemo : MonoBehaviour
     public PlayingCard testCard = new PlayingCard(Suit.Spades, Rank.King);
     public CardView cardView;
 
-
+    /// <summary>
+    /// 建立整副牌
+    /// </summary>
     private Deck _deck = new Deck();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
