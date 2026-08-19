@@ -14,29 +14,72 @@ namespace DealerGame.core
         /// 保管卡牌資料的清單
         /// </summary>
         private readonly List<PlayingCard> _cards = new List<PlayingCard>();
+        /// <summary>
+        /// C#內建隨機庫(多面骰)
+        /// </summary>
+        private readonly Random _random = new Random();
+        /// <summary>
+        /// 下一張要抽牌的序號
+        /// </summary>
+        private int _nextIndex = 0;
         #endregion 私有欄位
 
         #region 公開屬性
+        /// <summary>
+        /// 剩下的撲克牌數量，
+        /// (呼叫參數時會即時更新算式結果)
+        /// </summary>
+        public int Remaining => _cards.Count - _nextIndex;
+        /// <summary>
+        /// 是否已經抽完牌，排庫是否用盡
+        /// </summary>
+        public bool IsEmpty => Remaining == 0;
         #endregion 公開屬性
 
         #region 建構式
         public Deck()
         {
             CreateStandardCards();
+            Reset();
         }
-
-
         #endregion 建構式
 
+
         #region 公開方法
+        /// <summary>
+        /// 重設
+        /// </summary>
+        public void Reset()
+        {
+            _nextIndex = 0;
+        }
+        /// <summary>
+        /// 洗牌
+        /// </summary>
+        public void Shuffle()
+        {
+            //For迴圈(起始值;終點值;迭代值)
+            for (int index = _cards.Count; index > 0; index--)
+            {
+                //抽取要交換的索引碼  = 多面骰(0,未洗過的最大值)
+                int swapIndex = _random.Next(0, index);
+                //暫存牌庫中最後一張(未洗過)的牌
+                PlayingCard tmpCard = _cards[index - 1];
+                //抽出的排放到最後
+                _cards[index - 1] = _cards[swapIndex];
+                //完成交換(原本的最後放到抽出的位置)
+                _cards[swapIndex] = tmpCard;
+            }
+        }
+
         /// <summary>
         /// 抽牌
         /// </summary>
         /// <returns>一張牌</returns>
         public PlayingCard Draw()
         {
-            return _cards[0];
-               
+            return _cards[_nextIndex++];//回傳下一張牌，並將序號往後移動，執行後加一的意思
+
         }
 
         #endregion 公開方法
