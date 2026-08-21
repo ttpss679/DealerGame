@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 namespace DealerGame.View
 {
     /// <summary>
@@ -33,13 +34,38 @@ namespace DealerGame.View
             {
                 //具現化物件到指定的父物件下
                 CardView tmpView = Instantiate(_cardPrefab, transform);
-                //先隱藏：遊戲物件.設為(不可見)
+                //先隱藏：遊戲物件.設為(不可見)  SetActive-中文-設定啟用
                 tmpView.gameObject.SetActive(false);
                 //收納入池
-                _cardView.Enqueue(tmpView);
-                
+                _cardView.Enqueue(tmpView);                
             }
         }
+        /// <summary>
+        /// 租用一個空閒的牌面(資料顯示器)
+        /// </summary>
+        /// <returns>空閒的牌面(預製物)</returns>
+        public CardView Rent()
+        {
+            //抽出一張牌(出列)
+            CardView tmpView = _cardView.Dequeue();
+            //取消隱藏：遊戲物件.設為(可見)
+            tmpView.gameObject.SetActive(true);
+            return tmpView;
+        }
+        /// <summary>
+        /// 回收一個使用過的牌面(資料顯示器)
+        /// </summary>
+        /// <param name="view">使用過的牌面</param>
+        public void Return(CardView view)
+        {
+            //回歸到子物件的管理層
+            view.transform.SetParent(transform,false);
+            //先隱藏：遊戲物件.設為(不可見)  SetActive-中文-設定啟用
+            view.gameObject.SetActive(false);
+            //收回入池(重新入隊)
+            _cardView.Enqueue(view);
+        }
+
         #endregion 公開方法
     }
 }

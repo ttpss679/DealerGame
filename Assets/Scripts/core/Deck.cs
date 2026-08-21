@@ -54,7 +54,7 @@ namespace DealerGame.core
             _nextIndex = 0;
         }
         /// <summary>
-        /// 洗牌
+        /// 執行洗牌(演算法)
         /// </summary>
         public void Shuffle()
         {
