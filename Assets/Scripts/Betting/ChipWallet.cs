@@ -9,7 +9,7 @@ namespace DealerGame.Betting
     {
         #region 公開屬性
         /// <summary>
-        /// 取得玩家的籌碼餘額(私人設定)
+        /// 取得玩家的籌碼餘額(只允許透過功能做內部設定)
         /// </summary>
         public int Balance { get; private set; }
         #endregion 公開屬性
