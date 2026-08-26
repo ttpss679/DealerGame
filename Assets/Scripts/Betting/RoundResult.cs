@@ -39,7 +39,7 @@ namespace DealerGame.Betting
 
         #region 公開方法
         /// <summary>
-        /// 計算下注金額的回傳值(整數
+        /// 計算下注金額的回傳值(整數)
         /// </summary>
         /// <param name="bet">下注值</param>
         /// <returns>結算回報</returns>
