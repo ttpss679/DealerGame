@@ -57,7 +57,7 @@ namespace DealerGame.Game.HighCard
         {
             _betAmount += Math.Min(_blance, _betAmount + 10);
             UpdateBetUI();
-            UpdateBlaceIU();
+            
         }
         /// <summary>
         /// [UI按鈕]減注
@@ -66,7 +66,7 @@ namespace DealerGame.Game.HighCard
         {
             _betAmount -= Math.Max(10, _betAmount - 10);
             UpdateBetUI();
-            UpdateBlaceIU();
+            
         }
         /// <summary>
         /// [UI按鈕]確認下注金
@@ -75,7 +75,7 @@ namespace DealerGame.Game.HighCard
         {
             _session.Betting.TryPlaceBet(_betAmount);
             //UpdateBlaceIU();
-            //
+            //原本的流程節奏要先執行一次：看到餘額減少
         }
 
         /// <summary>
@@ -92,15 +92,15 @@ namespace DealerGame.Game.HighCard
             //用規則書取得結果
             RoundResult result = _rules.Resolve(playCard, dealerCard);
             int returnChips = _session.Betting.Settle(result);
-
-            Debug.Log($"{result.Reason} 獲得 {returnChips} 籌碼");
+            UpdateBlaceIU();
+            //Debug.Log($"{result.Reason} 獲得 {returnChips} 籌碼");
 
         }
         #endregion 公開方法
 
         #region 私有方法
         /// <summary>
-        /// 更新籌碼UI
+        /// 更新下注的籌碼UI
         /// </summary>
         private void UpdateBetUI()
         {
@@ -108,7 +108,7 @@ namespace DealerGame.Game.HighCard
             _betLabel.text = _betAmount.ToString();
         }
         /// <summary>
-        /// 更新餘額UI
+        /// 更新玩家籌碼餘額UI
         /// </summary>
         private void UpdateBlaceIU()
         {
