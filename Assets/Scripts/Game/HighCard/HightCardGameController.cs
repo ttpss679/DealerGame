@@ -55,7 +55,7 @@ namespace DealerGame.Game.HighCard
         /// </summary>
         public void AddBet()
         {
-            _betAmount += Math.Min(_blance, _betAmount + 10);
+            _betAmount = Math.Min(_blance, _betAmount + 10);
             UpdateBetUI();
             
         }
@@ -64,7 +64,7 @@ namespace DealerGame.Game.HighCard
         /// </summary>
         public void ReduceBet()
         {
-            _betAmount -= Math.Max(10, _betAmount - 10);
+            _betAmount = Math.Max(10, _betAmount - 10);
             UpdateBetUI();
             
         }
@@ -76,6 +76,7 @@ namespace DealerGame.Game.HighCard
             _session.Betting.TryPlaceBet(_betAmount);
             //UpdateBlaceIU();
             //原本的流程節奏要先執行一次：看到餘額減少
+            _dealer.CollectAll();
         }
 
         /// <summary>
