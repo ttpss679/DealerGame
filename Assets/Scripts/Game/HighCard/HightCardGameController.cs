@@ -5,6 +5,10 @@ using TMPro;
 using UnityEngine;
 namespace DealerGame.Game.HighCard
 {
+
+    /// <summary>
+    /// 比大小的遊戲流程主控程式
+    /// </summary>
     public class HightCardGameController : MonoBehaviour
     {
         #region UI元件
