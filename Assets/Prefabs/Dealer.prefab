@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6ba02048f59f3479ce58cc1e5b6f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DealerGame.Game.Dealer
-  viewPool: {fileID: 0}
+  viewPool: {fileID: 4159662319508757362, guid: b3a0d9d1f40fa3941885399dac8d46a1, type: 3}

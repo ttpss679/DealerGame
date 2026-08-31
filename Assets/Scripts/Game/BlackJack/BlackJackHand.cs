@@ -5,15 +5,13 @@ using UnityEngine;
 
 namespace DealerGame.Game.BlackJack
 {
-
+    /// <summary>
+    /// 21點的手排資料(一位玩家一組)
+    /// </summary>
     public class BlackJackHand : MonoBehaviour
     {
         #region 欄位
-        /// <summary>
-        /// 卡牌排列間隔
-        /// </summary>
-        [SerializeField]
-        private float _sortingSpace = 1.5f;
+        
         /// <summary>
         /// 手牌存放處(清單物件)
         /// </summary>
@@ -21,9 +19,6 @@ namespace DealerGame.Game.BlackJack
         #endregion 欄位
 
         #region 公開屬性
-        /// <summary>
-        /// 擁有的手牌數
-        /// </summary>
         public int Count => _cards.Count;
         /// <summary>
         /// 手牌點數總和
@@ -39,7 +34,7 @@ namespace DealerGame.Game.BlackJack
         public void Add(PlayingCard card)
         {
             _cards.Add(card);//加新資料
-            CardSorting(); //處裡排序
+            
         }
 
 
@@ -50,13 +45,7 @@ namespace DealerGame.Game.BlackJack
         {
             _cards.Clear();
         }
-        private void CardSorting()
-        {
-            int index = Count - 1;//子物件的索引號碼
-            //使用固定間隔倍率在X軸上移動視覺物件(以父物件為原始基礎點)
-            transform.GetChild(index).position = 
-                transform.position + Vector3.right * _sortingSpace * index;
-        }
+       
         #endregion 公開方法
 
         #region 私有方法
