@@ -67,7 +67,7 @@ namespace DealerGame.Game.BlackJack
         {
             //荷官開局
             _dealer.BeginRound();
-            
+
             DealTo(PlayerHand, _playerLayout);
             DealTo(DealerHand, _dealerLayout);
             DealTo(PlayerHand, _playerLayout);
@@ -98,6 +98,8 @@ namespace DealerGame.Game.BlackJack
             if (!_round.CanPlayerAct) return; //避免非玩家可行動誤觸
             //發一張牌到玩家
             DealTo(PlayerHand, _playerLayout);
+            _round.CheckBust();
+            UpdateBtnUI();//更新對應的UI
         }
         /// <summary>
         /// 玩家回合可操作：放棄加牌(進到荷官回合)

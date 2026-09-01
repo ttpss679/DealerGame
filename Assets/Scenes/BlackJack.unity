@@ -202,13 +202,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 26e98653d4e6c534e9c8850f956a89ed, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 469831257}
+        m_TargetAssemblyTypeName: DealerGame.Game.BlackJack.BlackJackGameController,
+          Assembly-CSharp
+        m_MethodName: Hit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -389,37 +390,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!1 &169809281
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 169809282}
-  m_Layer: 0
-  m_Name: PlayerHand
-  m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &169809282
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169809281}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: -4, z: 0}
-  m_LocalScale: {x: 0, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &296854233
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,8 +524,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9039728102193701431, guid: 1e6521383f26b8f4596103e338b765ce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1028654953}
   m_SourcePrefab: {fileID: 100100000, guid: 1e6521383f26b8f4596103e338b765ce, type: 3}
+--- !u!1 &368390414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9039728102193701431, guid: 1e6521383f26b8f4596103e338b765ce, type: 3}
+  m_PrefabInstance: {fileID: 368390413}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &469831255
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,9 +578,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e98653d4e6c534e9c8850f956a89ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DealerGame.Game.BlackJack.BlackJackGameController
-  _dealer: {fileID: 0}
-  _playerHand: {fileID: 0}
-  _dealerHand: {fileID: 0}
+  _betLabel: {fileID: 0}
+  _blanceLabel: {fileID: 0}
+  _playerPointsLabel: {fileID: 0}
+  _dealerPointsLabel: {fileID: 0}
+  _startBin: {fileID: 951920506}
+  _hitBin: {fileID: 90799046}
+  _standBin: {fileID: 730592615}
+  _dealer: {fileID: 1028654952}
+  _playerLayout: {fileID: 1737809508}
+  _dealerLayout: {fileID: 1573955977}
 --- !u!1 &615697198
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,13 +776,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 26e98653d4e6c534e9c8850f956a89ed, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 469831257}
+        m_TargetAssemblyTypeName: DealerGame.Game.BlackJack.BlackJackGameController,
+          Assembly-CSharp
+        m_MethodName: Stand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1061,13 +1047,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 26e98653d4e6c534e9c8850f956a89ed, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 469831257}
+        m_TargetAssemblyTypeName: DealerGame.Game.BlackJack.BlackJackGameController,
+          Assembly-CSharp
+        m_MethodName: StartRound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1111,6 +1098,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951920504}
   m_CullTransparentMesh: 1
+--- !u!114 &1028654952 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5726110875584947907, guid: 1e6521383f26b8f4596103e338b765ce, type: 3}
+  m_PrefabInstance: {fileID: 368390413}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368390414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6ba02048f59f3479ce58cc1e5b6f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DealerGame.Game.Dealer
+--- !u!114 &1028654953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368390414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb627e063194e1742ac5f0c6886a7394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DealerGame.View.CardViewPool
+  _cardPrefab: {fileID: 0}
 --- !u!1 &1282003789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,7 +1259,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1282003789}
   m_CullTransparentMesh: 1
---- !u!1 &1391104043
+--- !u!1 &1573955976
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1256,25 +1267,84 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1391104044}
+  - component: {fileID: 1573955978}
+  - component: {fileID: 1573955977}
   m_Layer: 0
-  m_Name: 'DealerHand '
+  m_Name: DealerHand
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1391104044
+--- !u!114 &1573955977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573955976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ede1b0f16193348a91647f63126352, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DealerGame.View.CardHandLayout
+  _sortingSpace: 1.5
+--- !u!4 &1573955978
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391104043}
+  m_GameObject: {fileID: 1573955976}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 4, z: 0}
-  m_LocalScale: {x: 0, y: 1, z: 1}
+  m_LocalPosition: {x: -7, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1737809507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1737809509}
+  - component: {fileID: 1737809508}
+  m_Layer: 0
+  m_Name: PlayerHand
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1737809508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737809507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ede1b0f16193348a91647f63126352, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DealerGame.View.CardHandLayout
+  _sortingSpace: -1.5
+--- !u!4 &1737809509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737809507}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7, y: -3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1422,8 +1492,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 167068840}
   - {fileID: 368390413}
-  - {fileID: 169809282}
-  - {fileID: 1391104044}
+  - {fileID: 1737809509}
+  - {fileID: 1573955978}
   - {fileID: 469831256}
   - {fileID: 615697202}
   - {fileID: 296854236}

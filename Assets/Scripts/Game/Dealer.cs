@@ -32,7 +32,7 @@ namespace DealerGame.Game
 
         #region 生命週期
         /// <summary>
-        /// 喚醒
+        /// 喚醒：比Start更早被執行
         /// </summary>
         private void Awake()
         {

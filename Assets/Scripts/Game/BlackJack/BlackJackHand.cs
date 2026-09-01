@@ -8,7 +8,7 @@ namespace DealerGame.Game.BlackJack
     /// <summary>
     /// 21點的手排資料(一位玩家一組)
     /// </summary>
-    public class BlackJackHand : MonoBehaviour
+    public class BlackJackHand
     {
         #region 欄位
         

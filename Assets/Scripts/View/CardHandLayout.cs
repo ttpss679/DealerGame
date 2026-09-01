@@ -30,7 +30,7 @@ namespace DealerGame.View
         /// <summary>
         /// 更新排列(視覺刷新)
         /// </summary>
-        private void CardSorting()
+        public void Refresh()
         {
             int index = Count - 1;//子物件的索引號碼
             //使用固定間隔倍率在X軸上移動視覺物件(以父物件為原始基礎點)
