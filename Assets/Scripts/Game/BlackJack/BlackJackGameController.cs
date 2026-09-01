@@ -85,8 +85,10 @@ namespace DealerGame.Game.BlackJack
         {
             //荷官發牌至指定手牌對象定位
             PlayingCard card = _dealer.DealTo(layout.Root);
-            hand.Add(card);//資料納管
-            layout.Refresh();//視覺更新
+            hand.Add(card); // 資料納管
+            layout.Refresh(); // 視覺更新
+
+
         }
         /// <summary>
         /// 玩家回合可操作：再要一張牌(回合判定是否爆牌)
