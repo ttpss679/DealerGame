@@ -20,11 +20,11 @@ namespace DealerGame.Game.BlackJack
         [SerializeField]
         private TMP_Text _dealerPointsLabel;
         [SerializeField]
-        private Button _startBin;
+        private Button _startBtn;
         [SerializeField]
-        private Button _hitBin; 
+        private Button _hitBtn; 
         [SerializeField]
-        private Button _standBin;
+        private Button _standBtn;
         #endregion UI元件
 
         #region 欄位
@@ -117,12 +117,12 @@ namespace DealerGame.Game.BlackJack
         {
             //簡寫法?檢查物件是否存在
             //開始紐?物件.是否可見.(指定狀態：回合準備中)
-            _startBin?.gameObject.SetActive(_round.State ==
+            _startBtn?.gameObject.SetActive(_round.State ==
                 BlackJackRoundState.WaitingForRound);
             //要牌/停牌?.物件.是否可見(指定狀態：玩家回合)
-            _hitBin?.gameObject.SetActive(_round.State == 
+            _hitBtn?.gameObject.SetActive(_round.State == 
                 BlackJackRoundState.PlayerTurn);
-            _standBin?.gameObject.SetActive(_round.State == 
+            _standBtn?.gameObject.SetActive(_round.State == 
                 BlackJackRoundState.PlayerTurn);
         }
         #endregion 私有方法

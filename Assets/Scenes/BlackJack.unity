@@ -582,9 +582,9 @@ MonoBehaviour:
   _blanceLabel: {fileID: 0}
   _playerPointsLabel: {fileID: 0}
   _dealerPointsLabel: {fileID: 0}
-  _startBin: {fileID: 951920506}
-  _hitBin: {fileID: 90799046}
-  _standBin: {fileID: 730592615}
+  _startBtn: {fileID: 951920506}
+  _hitBtn: {fileID: 90799046}
+  _standBtn: {fileID: 730592615}
   _dealer: {fileID: 1028654952}
   _playerLayout: {fileID: 1737809508}
   _dealerLayout: {fileID: 1573955977}
