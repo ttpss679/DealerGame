@@ -13,7 +13,12 @@ namespace DealerGame.View
         private TMP_Text _suitLabel;
         [SerializeField]
         private TMP_Text _rankLabel;
+        private SpriteRenderer _cardBack => GetComponent<SpriteRenderer>();
         #endregion UI元件
+
+        #region 私有欄位
+        private Color orgColor;
+        #endregion
 
         #region 公開方法
         /// <summary>
@@ -22,12 +27,26 @@ namespace DealerGame.View
         /// <param name="card">卡牌資料</param>
         public void Bind(PlayingCard card)
         {
+
             //更新文字
-            _suitLabel.text = GetSuitText(card.Suit);
-            _rankLabel.text = GetRankText(card.Rank);
+            _suitLabel.text =  GetSuitText(card.Suit);
+            _rankLabel.text =  GetRankText(card.Rank);
+            //設定原始色彩
+            orgColor = GetSuitColor(card.Suit);
+            //視覺是否激活
+            Active(card.IsShowUp);
+        }
+        /// <summary>
+        /// 卡牌視覺激活
+        /// </summary>
+        /// <param name="active">是/否</param>
+        public void Active(bool active)
+        {
             //改顏色
-            _rankLabel.color = GetSuitColor(card.Suit);
-            _suitLabel.color = GetSuitColor(card.Suit);
+            _suitLabel.color = active ? orgColor : Color.clear;
+            _rankLabel.color = active ? orgColor : Color.clear;
+            //底色
+            _cardBack.color = active ? Color.white : Color.gray2;
         }
         #endregion 公開方法
 
@@ -83,6 +102,7 @@ namespace DealerGame.View
                 default: return Color.white;
             }
         }
+
      }
 
         #endregion 私有方法

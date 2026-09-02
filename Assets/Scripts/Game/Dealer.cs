@@ -56,11 +56,14 @@ namespace DealerGame.Game
         /// 發牌給某人
         /// </summary>
         /// <param name="dest">目的地</param>
+        /// <param name="showUp">是否翻開</param>
         /// <returns>卡牌資料</returns>
-        public PlayingCard DealTo(Transform dest)
+        public PlayingCard DealTo(Transform dest, bool showUp = true)
         {
             //抽出牌
             PlayingCard card = _deck.Draw();
+            if (showUp) card.ShowUp();
+            else card.Hide();
             //抽出一張牌(空閒牌面)
             CardView view = viewPool.Rent();
             //丟到所屬手排區(目的地)
@@ -71,6 +74,14 @@ namespace DealerGame.Game
             _activeViews.Add(view);
             //傳出去
             return card;
+        }
+
+        public void ShowUpAll()
+        {
+            foreach (CardView view in _activeViews)
+            {
+                view.Active(true);
+            }
         }
 
         /// <summary>

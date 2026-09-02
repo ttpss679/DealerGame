@@ -4,7 +4,7 @@ using UnityEngine;
 namespace DealerGame.Game.BlackJack
 {
     /// <summary>
-    /// 
+    /// 21點的回合類別
     /// </summary>
     public class BlackJackRound
     {
@@ -50,10 +50,34 @@ namespace DealerGame.Game.BlackJack
             State = BlackJackRoundState.DealerTurn;
         }
 
-        public void CheckBust()
+        public bool CheckBust()
         {
-            if (IsPlayerBust) State = BlackJackRoundState.Complete;
+            if (IsPlayerBust)
+            {
+                TryComplete();
+                return true;
+            }
+            return false;
         }
+
+        //internal 權限在於私人跟公開之間，再指定空間裡公開，在空間外就私人
+        /// <summary>
+        /// 嘗試完成牌局
+        /// </summary>
+        internal void TryComplete()
+        {
+            State = BlackJackRoundState.Complete;
+        }
+        /// <summary>
+        /// 嘗試新開局(清理資料)
+        /// </summary>
+        public void TryNewGame()
+        {
+            State = BlackJackRoundState.WaitingForRound;
+            PlayerHand.Clear();
+            DealerHand.Clear();
+        }
+
         #endregion 公開方法
 
     }
