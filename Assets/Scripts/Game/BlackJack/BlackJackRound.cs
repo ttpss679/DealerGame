@@ -14,13 +14,17 @@ namespace DealerGame.Game.BlackJack
             BlackJackRoundState.WaitingForRound;
 
         /// <summary>
-        /// 取得玩家手排資料
+        /// 取得玩家手牌資料
         /// </summary>
         public BlackJackHand PlayerHand { get; } = new BlackJackHand();
         /// <summary>
-        /// 取得荷官手排資料
+        /// 取得荷官手牌資料
         /// </summary>
         public BlackJackHand DealerHand { get; } = new BlackJackHand();
+        /// <summary>
+        /// 新開局的狀態：輔助判斷秒勝(BlackJack)
+        /// </summary>
+        public bool NewRound => State == BlackJackRoundState.WaitingForRound;
         /// <summary>
         /// 取得當下玩家是否可以合法操作
         /// </summary>
@@ -54,19 +58,37 @@ namespace DealerGame.Game.BlackJack
         {
             if (IsPlayerBust)
             {
-                TryComplete();
-                return true;
+                
+                return TryComplete();
             }
             return false;
         }
+        /// <summary>
+        /// 判斷是否過五關
+        /// </summary>
+        /// <returns></returns>
+        public bool CheckPass5()
+        {
+            if (PlayerHand.IsPass5 || DealerHand.IsPass5)
+            {
 
+                return TryComplete();
+            }
+            return false;
+            
+        }
         //internal 權限在於私人跟公開之間，再指定空間裡公開，在空間外就私人
         /// <summary>
         /// 嘗試完成牌局
         /// </summary>
-        internal void TryComplete()
+        internal bool TryComplete()
         {
+            //開局也可能結束：
+            if (NewRound && !PlayerHand.IsBlackJack) return false;
+
             State = BlackJackRoundState.Complete;
+            //觸發清算
+            return true;
         }
         /// <summary>
         /// 嘗試新開局(清理資料)
